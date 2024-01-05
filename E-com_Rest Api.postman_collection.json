@@ -1,0 +1,566 @@
+{
+	"info": {
+		"_postman_id": "c8cd2029-9bda-4c37-b8db-0f222594a8e7",
+		"name": "E-com_Rest Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30214606"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Anjali Patel\",\r\n    \"email\":\"anjali.patel505@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"type\":\"Customer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3400/api/users/signUp",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"users",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"anjali.patel505@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3400/api/users/signIn",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"users",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\":\"password4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3400/api/users/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"users",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDA3MzM0ODgsImV4cCI6MTcwMDczNzA4OH0.km8WFjEUoAneZCEgCBtrIoZ9svN4XXd7EGrSUwUeE44",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Jeans",
+									"type": "text"
+								},
+								{
+									"key": "imageUrl",
+									"type": "file",
+									"src": "/C:/Users/dell/Pictures/Saved Pictures/2af8026b-5e40-4b58-a54d-95fc5e784cc7.jpeg"
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "sizes",
+									"value": "M,L,XL",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3400/api/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDA3MzM0ODgsImV4cCI6MTcwMDczNzA4OH0.km8WFjEUoAneZCEgCBtrIoZ9svN4XXd7EGrSUwUeE44",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3400/api/products/",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDA3MzM0ODgsImV4cCI6MTcwMDczNzA4OH0.km8WFjEUoAneZCEgCBtrIoZ9svN4XXd7EGrSUwUeE44",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3400/api/products/655f237c130f4a51733b72d4",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"products",
+								"655f237c130f4a51733b72d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "filterProducts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDA4MDcxMjAsImV4cCI6MTcwMDgxMDcyMH0.3a_GxIo590H8dGaAc-HrfCdo_YhRwoJoeMFaom2X5EM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3400/api/products/filter?maxPrice=100000",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"products",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "maxPrice",
+									"value": "100000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rateProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTVkYTQxNzNlZjZiZDI0NGY3ZWEwZTkiLCJlbWFpbCI6ImFuamFsaS5wYXRlbDUwNUBnbWFpbC5jb20iLCJpYXQiOjE3MDA4MTEwOTUsImV4cCI6MTcwMDgxNDY5NX0.hL705Qn3wQ-woeVq2Xxt6LV6fmksJtyseIFGXbchXFQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3400/api/products/rate?productId=655f23b19c0a1b1ffe4582d9&rating=4",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"products",
+								"rate"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "655f23b19c0a1b1ffe4582d9"
+								},
+								{
+									"key": "rating",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cartItem",
+			"item": [
+				{
+					"name": "addNewCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTVkYTQxNzNlZjZiZDI0NGY3ZWEwZTkiLCJlbWFpbCI6ImFuamFsaS5wYXRlbDUwNUBnbWFpbC5jb20iLCJpYXQiOjE3MDEyMzUyNTUsImV4cCI6MTcwMTIzODg1NX0.J2DzlWp5jpPWNYXbX_boR7zPEE_baXb2hBTfwdI6nTo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\":\"655f237c130f4a51733b72d4\",\r\n    \"quantity\":4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3400/api/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCarts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3400/api/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeCart",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTVkYTQxNzNlZjZiZDI0NGY3ZWEwZTkiLCJlbWFpbCI6ImFuamFsaS5wYXRlbDUwNUBnbWFpbC5jb20iLCJpYXQiOjE3MDEyMzUyNTUsImV4cCI6MTcwMTIzODg1NX0.J2DzlWp5jpPWNYXbX_boR7zPEE_baXb2hBTfwdI6nTo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3400/api/cart/",
+							"host": [
+								"localhost"
+							],
+							"port": "3400",
+							"path": [
+								"api",
+								"cart",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "placeOrder",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"addParams\":{\r\n        \"title\":\"Dinner at restaurant\",\r\n        \"amount\":50.0,\r\n        \"date\":\"23-08-2000\",\r\n        \"isRecurring\":false,\r\n        \"tags\":[\"food\",\"dinner\"]\r\n    },\r\n    \"updateParams\":{\r\n        \"oldTag\":\"dinner\",\r\n        \"newTag\":\"dining-out\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/expenses/add-and-update-with-transaction",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"expenses",
+						"add-and-update-with-transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Vishal Patel\",\r\n    \"email\":\"vis.patel@gmail.com\",\r\n    \"mobile\":\"9406870034\",\r\n    \"age\":29,\r\n    \"password\":\"password1\",\r\n    \"type\":\"student\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/codingninjas/api/user/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codingninjas",
+						"api",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"vis.patel0505@gmail.com\",\r\n    \"password\":\"password1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3100/codingninjas/api/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3100",
+					"path": [
+						"codingninjas",
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postjob",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc1ZTE3NWVkZWI4Mzg4MzgwNTcwYzMiLCJ1c2VyIjp7Il9pZCI6IjY1NzVlMTc1ZWRlYjgzODgzODA1NzBjMyIsIm5hbWUiOiJBbmphbGkgUGF0ZWwiLCJlbWFpbCI6IkFuamFsaS5wYXRlbEBnbWFpbC5jb20iLCJtb2JpbGUiOiI5NDA2ODcwMDU2IiwiYWdlIjoyNywicGFzc3dvcmQiOiIkMmIkMTIkWWJtLzZqTUpPMW4yUFYuRFdnd2dTZXl2cWZtSnU4cFZTNXpHcmxXcUVUL0pEMEd6dlVrMkMiLCJ0eXBlIjoicmVjcnVpdGVyIiwiX192IjowfSwiaWF0IjoxNzAyMjI1MTg3LCJleHAiOjE3MDIyMjg3ODd9.iv-ChVskWcaj9aUcwx3Nd7ZBoF12uGqkRf8AdxTwdos",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"SDE-1\",\r\n    \"description\":\"coding ninja is hiring\",\r\n    \"company\":\"coding ninja\",\r\n    \"salary\":160000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/codingninjas/api/job/post",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"codingninjas",
+						"api",
+						"job",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "applyjob",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTcwNzIyM2RkYjc5ODY1MTY0ZGE4ZTkiLCJpYXQiOjE3MDE5Mjk0NzEsImV4cCI6MTcwMTkzMzA3MX0.yxbPgMOSP1dopqFTdDYEQ4aP9hthsbv2KQfsGxYcqOQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"name\":\"jk rowling\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/books/authors",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
